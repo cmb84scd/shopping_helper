@@ -1,24 +1,32 @@
-# README
+# Shopping Helper
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Only buy an item only occasionally but struggle to remember what aisle it's in? Your supermarket likes to move items round from time to time? Then this app will help make your grocery shopping a little easier.
 
-Things you may want to cover:
+## User Stories
+```
+As a User
+So I know what products I have saved
+I would like to be able to view a product list
+```
+```
+As a User
+There is a new product I have started to buy
+I would like to be able to add products
+```
+```
+As a User
+When a product changes location or description
+I would like to be able to update the product data
+```
+```
+As a User
+When I no longer buy a product
+I would like to be able to delete the product data
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Entity Relationship Diagram
+### Relationships
+```
+User has many products
+```
+![e_r_diagram](https://user-images.githubusercontent.com/61843502/102484127-b2c01100-405d-11eb-9719-664b8b3f7476.png)
