@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "/products", type: :request do
-  let(:valid_attributes) { { item: 'bread', aisle: 5, side: 'left' } }
-  let(:invalid_attributes) { { item: nil, aisle: 5, side: 'left' } }
+  let(:valid_attributes) { { item: 'bread', aisle: 5, side: 'Left' } }
+  let(:invalid_attributes) { { item: nil, aisle: 5, side: 'Left' } }
 
   describe "GET /index" do
     it "renders a successful response" do
@@ -65,7 +65,7 @@ RSpec.describe "/products", type: :request do
 
   describe "PATCH /update" do
     context "with valid parameters" do
-      let(:new_attributes) { { item: 'bread', aisle: 8, side: 'left' } }
+      let(:new_attributes) { { item: 'bread', aisle: 8, side: 'Left' } }
 
       it "updates the requested product" do
         product = Product.create! valid_attributes
