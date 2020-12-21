@@ -3,6 +3,7 @@ services:
 - postgresql
 
 install:
+- gem install bundler -v 2.1.4
 - bundle install
 - bundle exec rake db:create
 - bundle exec rake db:migrate
