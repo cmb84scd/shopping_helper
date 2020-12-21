@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Update Product', type: :feature do
   scenario 'Can edit products and view them' do
-    product = Product.create(item: 'bread', aisle: 5, side: 'Left')
+    Product.create(item: 'bread', aisle: 5, side: 'Left')
 
     visit '/'
     click_link 'Edit'

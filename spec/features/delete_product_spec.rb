@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Delete Product', type: :feature do
   scenario 'Can delete unwanted products' do
-    product = Product.create(item: 'bread', aisle: 5, side: 'Left')
+    Product.create(item: 'bread', aisle: 5, side: 'Left')
 
     visit '/'
     click_link 'Delete'

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Create Product', type: :feature do
   scenario 'Can submit products and view them' do
     visit '/'
-    click_link 'New Product'
+    click_link 'NewProduct'
 
     fill_in 'Item', with: 'bread'
     fill_in 'Aisle', with: 5
@@ -17,7 +17,7 @@ RSpec.feature 'Create Product', type: :feature do
 
   scenario 'Unable to submit products as Item field is blank' do
     visit '/'
-    click_link 'New Product'
+    click_link 'NewProduct'
 
     fill_in 'Aisle', with: 5
     select 'Left', from: 'Side'
