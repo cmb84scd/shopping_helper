@@ -8,9 +8,6 @@ install:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 
-run:
-- bundle exec rails assets:precompile
-
 script: 
 - bundle exec rspec
 - bundle exec rubocop
