@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/cmb84scd/shopping_helper.svg?branch=master)](https://travis-ci.org/cmb84scd/shopping_helper)
 # Shopping Helper
 
 Only buy an item only occasionally but struggle to remember what aisle it's in? Your supermarket likes to move items round from time to time? Then this app will help make your grocery shopping a little easier.
