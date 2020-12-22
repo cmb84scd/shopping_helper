@@ -1,3 +1,4 @@
+[![Codeship Status for cmb84scd/shopping_helper](https://app.codeship.com/projects/8e7d43d9-779f-4697-9381-592be0620b21/status?branch=master)](https://app.codeship.com/projects/422370)
 # Shopping Helper
 
 Only buy an item only occasionally but struggle to remember what aisle it's in? Your supermarket likes to move items round from time to time? Then this app will help make your grocery shopping a little easier.
