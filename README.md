@@ -3,27 +3,33 @@
 
 Only buy an item only occasionally but struggle to remember what aisle it's in? Your supermarket likes to move items round from time to time? Then this app will help make your grocery shopping a little easier.
 
+After each iteration I am writing a Wiki to help keep track of my progress and so you can see how I built this app up. Here are the links to the iterations in my Wiki:<br>
+<b>[First Iteration](https://github.com/cmb84scd/shopping_helper/wiki/First-Iteration)</b>
+
+## App deployment
+- I have used Codeship CI
+- To merge a PR, first Codeship must pass
+- I have deployed the app using Heroku and it will only deploy when Codeship is passing
+- Visit [Shopping Helper](https://shopping-help.herokuapp.com/)
+
+## How to use
+Clone this repository and then run the following:
+```
+bundle install
+bin/rails db:create
+bin/rails db:migrate
+```
+To run the tests do:
+```
+rspec
+```
+and to see that it's linted, do:
+```
+rubocop
+```
+
 ## User Stories
-```
-As a User
-So I know what products I have saved
-I would like to be able to view a product list
-```
-```
-As a User
-There is a new product I have started to buy
-I would like to be able to add products
-```
-```
-As a User
-When a product changes location or description
-I would like to be able to update the product data
-```
-```
-As a User
-When I no longer buy a product
-I would like to be able to delete the product data
-```
+You will find these [here](https://github.com/cmb84scd/shopping_helper/wiki/User-Stories) in my Wiki.
 
 ## Entity Relationship Diagram
 ### Relationships
