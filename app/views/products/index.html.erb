@@ -18,9 +18,7 @@
         <td><%= product.item %></td>
         <td><%= product.aisle %></td>
         <td><%= product.side %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Product Details', product %></td>
       </tr>
     <% end %>
   </tbody>

@@ -5,6 +5,10 @@ RSpec.feature 'Update Product', type: :feature do
     Product.create(item: 'bread', aisle: 5, side: 'Left')
 
     visit '/'
+    click_link 'Product Details'
+
+    expect(page).to have_content 'Product Details'
+
     click_link 'Edit'
 
     expect(page).to have_content 'Update Product Information'
@@ -24,6 +28,10 @@ RSpec.feature 'Update Product', type: :feature do
     Product.create(item: 'bread', aisle: 5, side: 'Left')
 
     visit '/'
+    click_link 'Product Details'
+
+    expect(page).to have_content 'Product Details'
+
     click_link 'Edit'
 
     expect(page).to have_content 'Update Product Information'

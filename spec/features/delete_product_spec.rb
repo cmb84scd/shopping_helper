@@ -5,6 +5,10 @@ RSpec.feature 'Delete Product', type: :feature do
     Product.create(item: 'bread', aisle: 5, side: 'Left')
 
     visit '/'
+    click_link 'Product Details'
+
+    expect(page).to have_content 'Product Details'
+
     click_link 'Delete'
 
     expect(page).to_not have_content('bread')
