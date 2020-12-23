@@ -5,6 +5,8 @@ RSpec.feature 'Create Product', type: :feature do
     visit '/'
     click_link 'NewProduct'
 
+    expect(page).to have_content 'Add A New Product'
+
     fill_in 'Item', with: 'bread'
     fill_in 'Aisle', with: 5
     select 'Left', from: 'Side'
