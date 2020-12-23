@@ -93,10 +93,10 @@ RSpec.describe "/users", type: :request do
       }.to change(User, :count).by(-1)
     end
 
-    it "redirects to the users list" do
+    it "redirects to the homepage" do
       user1 = User.create! valid_attributes
       delete user_url(user1)
-      expect(response).to redirect_to(users_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 end
