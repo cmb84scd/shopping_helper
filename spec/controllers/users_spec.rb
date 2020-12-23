@@ -1,4 +1,4 @@
- require 'rails_helper'
+require 'rails_helper'
 
 RSpec.describe "/users", type: :request do
   let(:valid_attributes) { { username: 'testuser', email: 'test@email.com', password: 'password' } }
