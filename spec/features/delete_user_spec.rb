@@ -10,8 +10,8 @@ RSpec.feature 'Delete User', type: :feature do
 
     click_link 'Delete Account'
 
+    expect(page).to have_content('Account has successfully been deleted.')
     expect(page).to_not have_content('testuser')
     expect(page).to_not have_content('test@email.com')
-    expect(page).to have_content('Account has successfully been deleted.')
   end
 end

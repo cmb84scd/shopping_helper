@@ -12,6 +12,7 @@ RSpec.feature 'Create User', type: :feature do
     fill_in 'user[password_confirmation]', with: 'password'
     click_button 'Create User'
 
+    expect(page).to have_content('Account was successfully created.')
     expect(page).to have_content('testuser')
     expect(page).to have_content('test@email.com')
   end
