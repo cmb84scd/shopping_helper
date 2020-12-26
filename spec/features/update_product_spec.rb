@@ -17,6 +17,7 @@ RSpec.feature 'Update Product', type: :feature do
     select 'Right', from: 'Side'
     click_button 'Update Product'
 
+    expect(page).to have_content('Product was successfully updated.')
     expect(page).to have_content('bread')
     expect(page).to_not have_content(5)
     expect(page).to have_content(7)

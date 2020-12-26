@@ -12,6 +12,7 @@ RSpec.feature 'Create Product', type: :feature do
     select 'Left', from: 'Side'
     click_button 'Create Product'
 
+    expect(page).to have_content('Product was successfully created.')
     expect(page).to have_content('bread')
     expect(page).to have_content(5)
     expect(page).to have_content('Left')

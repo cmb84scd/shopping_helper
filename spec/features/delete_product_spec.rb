@@ -11,6 +11,7 @@ RSpec.feature 'Delete Product', type: :feature do
 
     click_link 'Delete'
 
+    expect(page).to have_content('Product was successfully deleted.')
     expect(page).to_not have_content('bread')
     expect(page).to_not have_content(5)
     expect(page).to_not have_content('Left')
