@@ -4,7 +4,7 @@ RSpec.feature 'Update Product', type: :feature do
   scenario 'Can edit products and view them' do
     Product.create(item: 'bread', aisle: 5, side: 'Left')
 
-    visit '/'
+    visit '/products'
     click_link 'Product Details'
 
     expect(page).to have_content 'Product Details'
@@ -28,7 +28,7 @@ RSpec.feature 'Update Product', type: :feature do
   scenario 'User leaves item empty when editing' do
     Product.create(item: 'bread', aisle: 5, side: 'Left')
 
-    visit '/'
+    visit '/products'
     click_link 'Product Details'
 
     expect(page).to have_content 'Product Details'

@@ -9,17 +9,18 @@ RSpec.describe "Sessions", type: :request do
     end
   end
 
-  describe "GET /create" do
-    it "returns http success" do
-      get "/sessions/create"
-      expect(response).to have_http_status(:success)
-    end
-  end
+  # describe "POST /create" do
+  #   it "returns http success" do
+  #     User.create(username: 'testuser', email: 'test@email.com', password: 'password')
+  #     post "/sessions", params: { email: 'test@email.com', password: 'password' }
+  #     expect(response).to have_http_status(:success)
+  #   end
+  # end
 
   describe "GET /destroy" do
-    it "returns http success" do
+    it "returns http 302" do
       get "/sessions/destroy"
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(302)
     end
   end
 end

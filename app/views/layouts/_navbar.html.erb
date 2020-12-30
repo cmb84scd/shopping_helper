@@ -1,9 +1,13 @@
 <nav class='navbar navbar-light bg-primary'>
   <div>
-    <b><%= link_to 'ShoppingHelper', '/', class: 'text-white' %></b>
+    <b><%= link_to 'ShoppingHelper', root_path, class: 'text-white' %></b>
     <%= link_to 'NewProduct', new_product_path, class: 'text-white' %>
   </div>
   <div>
+    <% if session[:user_id] %>
+    <%= link_to 'Log Out', sessions_destroy_path, class: 'text-white' %>
+    <% else %>
     <%= link_to 'CreateAccount', new_user_path, class: 'text-white' %>
+    <% end %>
   </div>
 </nav>

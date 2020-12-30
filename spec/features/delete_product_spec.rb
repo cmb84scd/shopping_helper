@@ -4,7 +4,7 @@ RSpec.feature 'Delete Product', type: :feature do
   scenario 'Can delete unwanted products' do
     Product.create(item: 'bread', aisle: 5, side: 'Left')
 
-    visit '/'
+    visit '/products'
     click_link 'Product Details'
 
     expect(page).to have_content 'Product Details'
