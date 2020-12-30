@@ -13,8 +13,6 @@ RSpec.feature 'Create User', type: :feature do
     click_button 'Create User'
 
     expect(page).to have_content('Account was successfully created.')
-    expect(page).to have_content('testuser')
-    expect(page).to have_content('test@email.com')
   end
 
   scenario 'User did not input their username' do
@@ -54,8 +52,8 @@ RSpec.feature 'Create User', type: :feature do
     fill_in 'Email', with: 'test@email.com'
     click_button 'Create User'
 
-    expect(page).to have_content('3 errors prevented this user from being created:')
-    expect(page).to have_content("Password can't be blank Password can't be blank Password is too short")
+    expect(page).to have_content('2 errors prevented this user from being created:')
+    expect(page).to have_content("Password can't be blank Password is too short")
   end
 
   scenario 'User email already exists' do
