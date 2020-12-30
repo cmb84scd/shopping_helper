@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.where(:user_id => session[:user_id])
   end
 
   # GET /products/1
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+    @product = Product.new(user_product_params)
 
     respond_to do |format|
       if @product.save
@@ -70,5 +70,9 @@ class ProductsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def product_params
     params.require(:product).permit(:item, :aisle, :side)
+  end
+
+  def user_product_params
+    product_params.merge(user_id: session[:user_id])
   end
 end
