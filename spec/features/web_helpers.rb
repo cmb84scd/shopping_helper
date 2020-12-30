@@ -1,7 +1,7 @@
 def login_user
   User.create(username: 'testuser', email: 'test@email.com', password: 'password')
 
-  visit root_url
+  visit '/'
 
   expect(page).to have_content 'Login'
 

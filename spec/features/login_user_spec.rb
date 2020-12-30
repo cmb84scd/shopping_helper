@@ -4,7 +4,7 @@ RSpec.feature 'Login User', type: :feature do
   scenario 'User can login with correct credentials' do
     User.create(username: 'testuser', email: 'test@email.com', password: 'password')
 
-    visit root_url
+    visit '/'
 
     expect(page).to have_content 'Login'
 
@@ -19,7 +19,7 @@ RSpec.feature 'Login User', type: :feature do
   scenario 'User unable to login with incorrect email' do
     User.create(username: 'testuser', email: 'test@email.com', password: 'password')
 
-    visit root_url
+    visit '/'
 
     expect(page).to have_content 'Login'
 
@@ -34,7 +34,7 @@ RSpec.feature 'Login User', type: :feature do
   scenario 'User unable to login with incorrect password' do
     User.create(username: 'testuser', email: 'test@email.com', password: 'password')
 
-    visit root_url
+    visit '/'
 
     expect(page).to have_content 'Login'
 
