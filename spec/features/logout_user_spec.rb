@@ -8,7 +8,8 @@ RSpec.feature 'Log Out User', type: :feature do
     expect(current_path).to eq products_path
     expect(page).to have_content 'Products'
 
-    click_link 'Log Out'
+    click_link 'LogOut'
     expect(current_path).to eq root_path
+    expect(page).to have_content('Successfully logged out')
   end
 end

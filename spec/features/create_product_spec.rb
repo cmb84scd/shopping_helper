@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'Create Product', type: :feature do
   scenario 'Can submit products and view them' do
-    visit '/products'
+    login_user
+    
     click_link 'NewProduct'
 
     expect(page).to have_content 'Add A New Product'
@@ -19,7 +20,8 @@ RSpec.feature 'Create Product', type: :feature do
   end
 
   scenario 'Unable to submit products as Item field is blank' do
-    visit '/products'
+    login_user
+    
     click_link 'NewProduct'
 
     fill_in 'Aisle', with: 5
