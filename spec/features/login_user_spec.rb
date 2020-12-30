@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Login User', type: :feature do
   scenario 'User can login with correct credentials' do
-    user1 = User.create(username: 'testuser', email: 'test@email.com', password: 'password')
+    User.create(username: 'testuser', email: 'test@email.com', password: 'password')
 
     visit root_url
 
@@ -17,7 +17,7 @@ RSpec.feature 'Login User', type: :feature do
   end
 
   scenario 'User unable to login with incorrect email' do
-    user1 = User.create(username: 'testuser', email: 'test@email.com', password: 'password')
+    User.create(username: 'testuser', email: 'test@email.com', password: 'password')
 
     visit root_url
 
@@ -32,7 +32,7 @@ RSpec.feature 'Login User', type: :feature do
   end
 
   scenario 'User unable to login with incorrect password' do
-    user1 = User.create(username: 'testuser', email: 'test@email.com', password: 'password')
+    User.create(username: 'testuser', email: 'test@email.com', password: 'password')
 
     visit root_url
 
