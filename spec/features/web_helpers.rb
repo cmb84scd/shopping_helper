@@ -1,5 +1,6 @@
 def login_user
-  User.create(username: 'testuser', email: 'test@email.com', password: 'password')
+  user2 = User.create(username: 'testuser', email: 'test@email.com', password: 'password')
+  Product.create(item: 'bread', aisle: 5, side: 'Left', user_id: user2.id)
 
   visit '/'
 
