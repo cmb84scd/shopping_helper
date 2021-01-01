@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.feature 'Update User', type: :feature do
   scenario 'User can edit their information and view it' do
-    user1 = User.create(username: 'testuser', email: 'test@email.com', password: 'password')
+    login_user
+    click_link 'Profile'
 
-    visit "users/#{user1.id}"
+    expect(page).to have_content 'User Profile'
+
     click_link 'Edit'
 
     expect(page).to have_content 'Update Your Details'
@@ -22,10 +24,12 @@ RSpec.feature 'Update User', type: :feature do
     expect(page).to have_content('user@email.com')
   end
 
-  scenario 'User can edit their information and view it' do
-    user1 = User.create(username: 'testuser', email: 'test@email.com', password: 'password')
+  scenario 'User forgets to enter email when updating their details' do
+    login_user
+    click_link 'Profile'
 
-    visit "users/#{user1.id}"
+    expect(page).to have_content 'User Profile'
+
     click_link 'Edit'
 
     expect(page).to have_content 'Update Your Details'

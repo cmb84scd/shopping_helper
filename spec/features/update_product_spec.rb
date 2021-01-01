@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.feature 'Update Product', type: :feature do
   scenario 'Can edit products and view them' do
     login_user
-
     click_link 'Product Details'
 
     expect(page).to have_content 'Product Details'
@@ -26,7 +25,6 @@ RSpec.feature 'Update Product', type: :feature do
 
   scenario 'User leaves item empty when editing' do
     login_user
-
     click_link 'Product Details'
 
     expect(page).to have_content 'Product Details'
