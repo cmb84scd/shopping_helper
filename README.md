@@ -36,5 +36,6 @@ You will find these [here](https://github.com/cmb84scd/shopping_helper/wiki/User
 ### Relationships
 ```
 User has many products
+Product belongs to user
 ```
-![e_r_diagram](https://user-images.githubusercontent.com/61843502/102484127-b2c01100-405d-11eb-9719-664b8b3f7476.png)
+![e_r_diagram1](https://user-images.githubusercontent.com/61843502/103560579-e4373a00-4eaf-11eb-9a88-e610099776b2.png)
