@@ -4,8 +4,9 @@
 Only buy an item only occasionally but struggle to remember what aisle it's in? Your supermarket likes to move items round from time to time? Then this app will help make your grocery shopping a little easier.
 
 After each iteration I am writing a Wiki to help keep track of my progress and so you can see how I built this app up. Here are the links to the iterations in my Wiki:<br>
-<b>[First Iteration](https://github.com/cmb84scd/shopping_helper/wiki/First-Iteration)</b><br>
-<b>[Second Iteration](https://github.com/cmb84scd/shopping_helper/wiki/Second-Iteration)</b>
+<b>[First Iteration](https://github.com/cmb84scd/shopping_helper/wiki/First-Iteration)<br>
+[Second Iteration](https://github.com/cmb84scd/shopping_helper/wiki/Second-Iteration)<br>
+[Third Iteration](https://github.com/cmb84scd/shopping_helper/wiki/Third-Iteration)</b>
 
 ## App deployment
 - I have used Codeship CI
