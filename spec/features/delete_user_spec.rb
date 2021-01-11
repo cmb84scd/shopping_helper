@@ -2,9 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'Delete User', type: :feature do
   scenario 'User can delete their account' do
-    user1 = User.create(username: 'testuser', email: 'test@email.com', password: 'password')
-
-    visit "users/#{user1.id}"
+    login_user
+    click_link 'Profile'
 
     expect(page).to have_content 'User Profile'
 

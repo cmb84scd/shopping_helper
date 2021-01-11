@@ -8,6 +8,7 @@ RSpec.describe "/users", type: :request do
   describe "GET /show" do
     it "renders a successful response" do
       user1 = User.create! valid_attributes
+      sign_in_as user1
       get user_url(user1)
       expect(response).to be_successful
     end
@@ -23,6 +24,7 @@ RSpec.describe "/users", type: :request do
   describe "GET /edit" do
     it "render a successful response" do
       user1 = User.create! valid_attributes
+      sign_in_as user1
       get edit_user_url(user1)
       expect(response).to be_successful
     end
@@ -36,9 +38,9 @@ RSpec.describe "/users", type: :request do
         }.to change(User, :count).by(1)
       end
 
-      it "redirects to the created user" do
+      it "redirects to the login page" do
         post users_url, params: { user: valid_attributes }
-        expect(response).to redirect_to(user_url(User.last))
+        expect(response).to redirect_to(root_url)
       end
     end
 
@@ -62,6 +64,7 @@ RSpec.describe "/users", type: :request do
 
       it "updates the requested user" do
         user1 = User.create! valid_attributes
+        sign_in_as user1
         patch user_url(user1), params: { user: new_attributes }
         user1.reload
         expect(User.find_by(username: 'updateuser')).to be
@@ -70,6 +73,7 @@ RSpec.describe "/users", type: :request do
 
       it "redirects to the user" do
         user1 = User.create! valid_attributes
+        sign_in_as user1
         patch user_url(user1), params: { user: new_attributes }
         user1.reload
         expect(response).to redirect_to(user_url(user1))
@@ -79,6 +83,7 @@ RSpec.describe "/users", type: :request do
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
         user1 = User.create! valid_attributes
+        sign_in_as user1
         patch user_url(user1), params: { user: invalid_attributes }
         expect(response).to be_successful
       end
@@ -88,6 +93,7 @@ RSpec.describe "/users", type: :request do
   describe "DELETE /destroy" do
     it "destroys the requested user" do
       user1 = User.create! valid_attributes
+      sign_in_as user1
       expect {
         delete user_url(user1)
       }.to change(User, :count).by(-1)
@@ -95,6 +101,7 @@ RSpec.describe "/users", type: :request do
 
     it "redirects to the homepage" do
       user1 = User.create! valid_attributes
+      sign_in_as user1
       delete user_url(user1)
       expect(response).to redirect_to(root_url)
     end

@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "/products", type: :request do
-  let(:valid_attributes) { { item: 'bread', aisle: 5, side: 'Left' } }
-  let(:invalid_attributes) { { item: nil, aisle: 5, side: 'Left' } }
+  let(:user1) { User.create(username: 'testuser', email: 'test@email.com', password: 'password') }
+  let(:valid_attributes) { { item: 'bread', aisle: 5, side: 'Left', user_id: user1.id } }
+  let(:invalid_attributes) { { item: nil, aisle: 5, side: 'Left', user_id: user1.id } }
+  
+  setup { sign_in_as user1 }
 
   describe "GET /index" do
     it "renders a successful response" do
