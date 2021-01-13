@@ -25,11 +25,15 @@ To run the tests do:
 ```
 rspec
 ```
-and to see that it's linted, do:
+to see that it's linted, do:
 ```
 rubocop
 ```
-
+and to run the app locally do:
+```
+bin/rails server
+visit localhost:3000 in your browser
+```
 ## User Stories
 You will find these [here](https://github.com/cmb84scd/shopping_helper/wiki/User-Stories) in my Wiki.
 
