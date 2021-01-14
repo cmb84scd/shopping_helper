@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   def require_login
     return unless session[:user_id].nil?
     
-    redirect_to root_url, alert: 'You must be logged in to access this section!'
+    redirect_to sessions_new_url, alert: 'You must be logged in to access this section!'
   end
 end

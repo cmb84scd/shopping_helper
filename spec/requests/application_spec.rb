@@ -11,7 +11,7 @@ RSpec.describe 'Application', type: :request do
 
     it 'redirects to the login page' do
       get products_url
-      expect(response).to redirect_to(root_url)
+      expect(response).to redirect_to(sessions_new_url)
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe 'Application', type: :request do
 
     it 'redirects to the login page' do
       get user_url(user1)
-      expect(response).to redirect_to(root_url)
+      expect(response).to redirect_to(sessions_new_url)
     end
   end
 end
