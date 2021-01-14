@@ -2,7 +2,7 @@ def login_user
   user2 = User.create(username: 'testuser', email: 'test@email.com', password: 'password')
   Product.create(item: 'bread', aisle: 5, side: 'Left', user_id: user2.id)
 
-  visit '/'
+  visit sessions_new_url
 
   expect(page).to have_content 'Login'
 
