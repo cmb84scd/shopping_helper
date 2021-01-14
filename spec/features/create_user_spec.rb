@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Create User', type: :feature do
   scenario 'User can create an account' do
-    visit '/users/new'
+    visit new_user_url
 
     expect(page).to have_content 'Create Account'
 
@@ -16,7 +16,7 @@ RSpec.feature 'Create User', type: :feature do
   end
 
   scenario 'User did not input their username' do
-    visit '/users/new'
+    visit new_user_url
 
     expect(page).to have_content 'Create Account'
 
@@ -30,7 +30,7 @@ RSpec.feature 'Create User', type: :feature do
   end
 
   scenario 'User did not input their email' do
-    visit '/users/new'
+    visit new_user_url
 
     expect(page).to have_content 'Create Account'
 
@@ -44,7 +44,7 @@ RSpec.feature 'Create User', type: :feature do
   end
 
   scenario 'User did not input their password' do
-    visit '/users/new'
+    visit new_user_url
 
     expect(page).to have_content 'Create Account'
 
@@ -58,7 +58,7 @@ RSpec.feature 'Create User', type: :feature do
 
   scenario 'User email already exists' do
     User.create(username: 'testuser1', email: 'test@email.com', password: 'password1')
-    visit '/users/new'
+    visit new_user_url
 
     expect(page).to have_content 'Create Account'
 
@@ -73,7 +73,7 @@ RSpec.feature 'Create User', type: :feature do
   end
 
   scenario 'User passwords do not match' do
-    visit '/users/new'
+    visit new_user_url
 
     expect(page).to have_content 'Create Account'
 
