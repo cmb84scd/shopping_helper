@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to products_url
     else
-      redirect_to '/sessions/new', notice: 'Email and/or password is incorrect'
+      redirect_to sessions_new_url, notice: 'Email and/or password is incorrect'
     end
   end
 
