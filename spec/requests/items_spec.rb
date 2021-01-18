@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "/items", type: :request do
   let(:user1) { User.create(username: 'testuser', email: 'test@email.com', password: 'password') }
-  let(:product1) { Product.create(item: 'bread', aisle: 5, side: 'Left', user_id: user1.id) }
+  let(:product1) { Product.create(item_name: 'bread', aisle: 5, side: 'Left', user_id: user1.id) }
   let(:valid_attributes) { { user_id: user1.id, product_id: product1.id, quantity: 1 } }
 
   setup { sign_in_as user1 }

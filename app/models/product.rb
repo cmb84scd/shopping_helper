@@ -2,5 +2,5 @@ class Product < ApplicationRecord
   belongs_to :user
   has_one :item, dependent: :destroy
   
-  validates :item, presence: true
+  validates :item_name, presence: true
 end

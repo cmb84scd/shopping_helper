@@ -7,7 +7,7 @@ RSpec.feature 'Create Product', type: :feature do
 
     expect(page).to have_content 'Add A New Product'
 
-    fill_in 'Item', with: 'bread'
+    fill_in 'product[item_name]', with: 'bread'
     fill_in 'Aisle', with: 5
     select 'Left', from: 'Side'
     click_button 'Create Product'
@@ -27,6 +27,6 @@ RSpec.feature 'Create Product', type: :feature do
     click_button 'Create Product'
 
     expect(page).to have_content('1 error prevented this product from being saved:')
-    expect(page).to have_content("Item can't be blank")
+    expect(page).to have_content("Item name can't be blank")
   end
 end

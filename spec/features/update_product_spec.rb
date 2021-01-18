@@ -33,12 +33,12 @@ RSpec.feature 'Update Product', type: :feature do
 
     expect(page).to have_content 'Update Product Information'
 
-    fill_in 'Item', with: nil
+    fill_in 'product[item_name]', with: nil
     fill_in 'Aisle', with: 7
     select 'Right', from: 'Side'
     click_button 'Update Product'
 
     expect(page).to have_content('1 error prevented this product from being saved:')
-    expect(page).to have_content("Item can't be blank")
+    expect(page).to have_content("Item name can't be blank")
   end
 end
