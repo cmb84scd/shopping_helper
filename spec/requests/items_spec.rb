@@ -43,6 +43,21 @@ RSpec.describe "/items", type: :request do
         expect(response).to redirect_to(items_url)
       end
     end
+
+    context "with invalid parameters" do
+      it "does not create a new Item" do
+        item = Item.create! valid_attributes
+        expect {
+          post items_url, params: { item: valid_attributes }
+        }.to change(Item, :count).by(0)
+      end
+
+      it "renders a successful response (i.e. to display the 'new' template)" do
+        item = Item.create! valid_attributes
+        post items_url, params: { item: valid_attributes }
+        expect(response).to be_successful
+      end
+    end
   end
 
   describe "PATCH /update" do
