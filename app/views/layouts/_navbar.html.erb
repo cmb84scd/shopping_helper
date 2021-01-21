@@ -3,6 +3,7 @@
     <% if session[:user_id] %>
       <b><%= link_to 'ShoppingHelper', products_path, class: 'text-white' %></b>
       <%= link_to 'NewProduct', new_product_path, class: 'text-white' %>
+      <%= link_to 'ShoppingList', items_path, class: 'text-white' %>
     <% else %>
       <b><%= link_to 'ShoppingHelper', root_path, class: 'text-white' %></b>
     <% end %>
