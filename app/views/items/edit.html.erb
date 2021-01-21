@@ -1,5 +1,9 @@
-<h1>Editing Item</h1>
+<h1>Item Details</h1>
+
+<p><b>Product: <%= @item.product.item_name %><br>
+Aisle: <%= @item.product.aisle %><br>
+Side: <%= @item.product.side %></b></p>
+  
+<h3>Update Quantity:</h3>
 
 <%= render 'form', item: @item %>
-
-<%= link_to 'Back', items_path %>
