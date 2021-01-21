@@ -21,7 +21,7 @@
         <td><%= item.product.side %></td>
         <td><%= item.quantity %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure you want to remove this from your shopping list?' } %></td>
+        <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure you want to remove this item from your shopping list?' } %></td>
       </tr>
     <% end %>
   </tbody>
