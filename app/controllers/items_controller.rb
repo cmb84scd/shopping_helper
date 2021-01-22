@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
         format.html { redirect_to products_url, notice: 'Item was successfully added to your shopping list.' }
         format.json { render :show, status: :created, location: @item }
       else
-        format.html { redirect_to products_url }
+        format.html { redirect_to products_url, notice: 'Item not added as it is already on your shopping list.' }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
