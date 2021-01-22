@@ -34,13 +34,13 @@ RSpec.describe "/items", type: :request do
     context "with valid parameters" do
       it "creates a new Item" do
         expect {
-          post items_url, params: { item: valid_attributes }
+          post items_url, params: { product_id: product1.id }
         }.to change(Item, :count).by(1)
       end
 
       it "redirects to the created item" do
-        post items_url, params: { item: valid_attributes }
-        expect(response).to redirect_to(items_url)
+        post items_url, params: { product_id: product1.id }
+        expect(response).to redirect_to(products_url)
       end
     end
 
@@ -48,14 +48,14 @@ RSpec.describe "/items", type: :request do
       it "does not create a new Item" do
         item = Item.create! valid_attributes
         expect {
-          post items_url, params: { item: valid_attributes }
+          post items_url, params: { product_id: product1.id }
         }.to change(Item, :count).by(0)
       end
 
-      it "renders a successful response (i.e. to display the 'new' template)" do
+      it "renders a redirect response (i.e. to display the products template)" do
         item = Item.create! valid_attributes
-        post items_url, params: { item: valid_attributes }
-        expect(response).to be_successful
+        post items_url, params: { product_id: product1.id }
+        expect(response).to redirect_to(products_url)
       end
     end
   end

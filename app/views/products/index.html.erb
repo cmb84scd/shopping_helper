@@ -10,6 +10,7 @@
       <th>Aisle</th>
       <th>Side</th>
       <th colspan="3"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -20,6 +21,7 @@
         <td><%= product.aisle %></td>
         <td><%= product.side %></td>
         <td><%= link_to 'Product Details', product %></td>
+        <td><%= button_to 'Add to shopping list', items_path, params: {product_id: product.id}, method: :post %></td>
       </tr>
     <% end %>
   </tbody>

@@ -19,14 +19,16 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(item_params)
+    @item = Item.new(new_item_params)
+    @item.user_id = session[:user_id]
+    @item.product_id = params[:product_id]
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to items_url, notice: 'Item was successfully created.' }
+        format.html { redirect_to products_url, notice: 'Item was successfully added to your shopping list.' }
         format.json { render :show, status: :created, location: @item }
       else
-        format.html { render :new }
+        format.html { redirect_to products_url }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
@@ -63,6 +65,10 @@ class ItemsController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
+  def new_item_params
+    params.permit(:user_id, :product_id, :quantity)
+  end
+
   def item_params
     params.require(:item).permit(:user_id, :product_id, :quantity)
   end
