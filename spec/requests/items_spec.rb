@@ -46,14 +46,14 @@ RSpec.describe "/items", type: :request do
 
     context "with invalid parameters" do
       it "does not create a new Item" do
-        item = Item.create! valid_attributes
+        Item.create! valid_attributes
         expect {
           post items_url, params: { product_id: product1.id }
         }.to change(Item, :count).by(0)
       end
 
       it "renders a redirect response (i.e. to display the products template)" do
-        item = Item.create! valid_attributes
+        Item.create! valid_attributes
         post items_url, params: { product_id: product1.id }
         expect(response).to redirect_to(products_url)
       end

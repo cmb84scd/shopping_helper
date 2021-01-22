@@ -19,16 +19,14 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(new_item_params)
-    @item.user_id = session[:user_id]
-    @item.product_id = params[:product_id]
+    create_new_item
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to products_url, notice: 'Item was successfully added to your shopping list.' }
+        format.html { redirect_to products_url, notice: 'Item added to your shopping list.' }
         format.json { render :show, status: :created, location: @item }
       else
-        format.html { redirect_to products_url, notice: 'Item not added as it is already on your shopping list.' }
+        format.html { redirect_to products_url, notice: 'Item not added. Its already on the list!' }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
@@ -62,6 +60,12 @@ class ItemsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def create_new_item
+    @item = Item.new(new_item_params)
+    @item.user_id = session[:user_id]
+    @item.product_id = params[:product_id]
   end
 
   # Only allow a list of trusted parameters through.

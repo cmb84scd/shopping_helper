@@ -5,7 +5,7 @@ RSpec.feature 'Create Item', type: :feature do
     login_user1
     click_button 'Add to shopping list'
     
-    expect(page).to have_content('Item was successfully added to your shopping list.')
+    expect(page).to have_content('Item added to your shopping list.')
 
     click_link 'ShoppingList'
 
@@ -18,6 +18,6 @@ RSpec.feature 'Create Item', type: :feature do
     login_user
     click_button 'Add to shopping list'
     
-    expect(page).to have_content('Item not added as it is already on your shopping list.')
+    expect(page).to have_content('Item not added. Its already on the list!')
   end
 end
