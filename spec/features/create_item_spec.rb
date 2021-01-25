@@ -12,6 +12,7 @@ RSpec.feature 'Create Item', type: :feature do
     expect(page).to have_content('bread')
     expect(page).to have_content(5)
     expect(page).to have_content('Left')
+    expect(page).to have_content(1)
   end
 
   scenario 'Unable to add item to shopping list as it already exists' do
