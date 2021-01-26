@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Delete Product', type: :feature do
   scenario 'Can delete unwanted products' do
     login_user
-    click_link 'Product Details'
+    click_button 'Product Details'
 
     expect(page).to have_content 'Product Details'
 

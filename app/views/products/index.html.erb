@@ -20,8 +20,8 @@
         <td><%= product.item_name %></td>
         <td><%= product.aisle %></td>
         <td><%= product.side %></td>
-        <td><%= link_to 'Product Details', product %></td>
-        <td><%= button_to 'Add to shopping list', items_path, params: {product_id: product.id}, method: :post %></td>
+        <td><%= button_to 'Product Details', product, method: :get, class: 'btn-primary' %></td>
+        <td><%= button_to 'Add to shopping list', items_path, params: {product_id: product.id}, method: :post, class: 'btn-success' %></td>
       </tr>
     <% end %>
   </tbody>
