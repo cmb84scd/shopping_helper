@@ -81,10 +81,12 @@ RSpec.describe '/users', type: :request do
     end
 
     context 'with invalid parameters' do
+      let(:wrong_attributes) { { username: 'updateuser', email: nil, password: nil } }
+      
       it 'renders a successful response (i.e. to display the edit template)' do
         user1 = User.create! valid_attributes
         sign_in_as user1
-        patch user_url(user1), params: { user: invalid_attributes }
+        patch user_url(user1), params: { user: wrong_attributes }
         expect(response).to be_successful
       end
     end

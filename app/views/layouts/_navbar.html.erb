@@ -10,7 +10,7 @@
   </div>
   <div>
     <% if session[:user_id] %>
-      <%= link_to 'Profile', "/users/#{session[:user_id]}", class: 'text-white' %>
+      <b><%= link_to @user.username.capitalize, "/users/#{session[:user_id]}", class: 'text-white' %></b>
       <%= link_to 'LogOut', sessions_destroy_path, data: { confirm: 'Are you sure you want to log out?' }, class: 'text-white' %>
     <% else %>
       <% if current_page? new_user_path %>
