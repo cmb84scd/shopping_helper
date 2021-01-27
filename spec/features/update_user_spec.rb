@@ -7,7 +7,7 @@ RSpec.feature 'Update User', type: :feature do
 
     expect(page).to have_content 'User Profile'
 
-    click_link 'Edit'
+    click_button 'Edit'
 
     expect(page).to have_content 'Update Your Details'
 
@@ -30,7 +30,7 @@ RSpec.feature 'Update User', type: :feature do
 
     expect(page).to have_content 'User Profile'
 
-    click_link 'Edit'
+    click_button 'Edit'
 
     expect(page).to have_content 'Update Your Details'
 
