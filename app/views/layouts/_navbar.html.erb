@@ -3,16 +3,21 @@
     <% if session[:user_id] %>
       <b><%= link_to 'ShoppingHelper', products_path, class: 'text-white' %></b>
       <%= link_to 'NewProduct', new_product_path, class: 'text-white' %>
+      <%= link_to 'ShoppingList', items_path, class: 'text-white' %>
     <% else %>
       <b><%= link_to 'ShoppingHelper', root_path, class: 'text-white' %></b>
     <% end %>
   </div>
   <div>
     <% if session[:user_id] %>
-      <%= link_to 'Profile', "/users/#{session[:user_id]}", class: 'text-white' %>
+      <b><%= link_to @user.username.capitalize, "/users/#{session[:user_id]}", class: 'text-white' %></b>
       <%= link_to 'LogOut', sessions_destroy_path, data: { confirm: 'Are you sure you want to log out?' }, class: 'text-white' %>
     <% else %>
-      <%= link_to 'CreateAccount', new_user_path, class: 'text-white' %>
+      <% if current_page? new_user_path %>
+        <%= link_to 'Login', sessions_new_path, class: 'text-white' %>
+      <% else %>
+        <%= link_to 'CreateAccount', new_user_path, class: 'text-white' %>
+      <% end %>
     <% end %>
   </div>
 </nav>

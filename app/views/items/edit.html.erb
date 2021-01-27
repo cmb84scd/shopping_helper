@@ -1,0 +1,9 @@
+<h1>Item Details</h1>
+
+<h5>Product: <%= @item.product.item_name %><br>
+Aisle: <%= @item.product.aisle %><br>
+Side: <%= @item.product.side %></h5>
+  
+<h4>Update Quantity:</h4>
+
+<%= render 'form', item: @item %>

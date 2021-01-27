@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.feature 'Delete User', type: :feature do
   scenario 'User can delete their account' do
     login_user
-    click_link 'Profile'
+    click_link 'Testuser'
 
     expect(page).to have_content 'User Profile'
 
-    click_link 'Delete Account'
+    click_button 'Delete Account'
 
     expect(page).to have_content('Account has successfully been deleted.')
     expect(page).to_not have_content('testuser')

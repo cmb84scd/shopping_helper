@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe '/products', type: :request do
   let(:user1) { User.create(username: 'testuser', email: 'test@email.com', password: 'password') }
-  let(:valid_attributes) { { item: 'bread', aisle: 5, side: 'Left', user_id: user1.id } }
-  let(:invalid_attributes) { { item: nil, aisle: 5, side: 'Left', user_id: user1.id } }
+  let(:valid_attributes) { { item_name: 'bread', aisle: 5, side: 'Left', user_id: user1.id } }
+  let(:invalid_attributes) { { item_name: nil, aisle: 5, side: 'Left', user_id: user1.id } }
   
   setup { sign_in_as user1 }
 
@@ -68,7 +68,7 @@ RSpec.describe '/products', type: :request do
 
   describe 'PATCH /update' do
     context 'with valid parameters' do
-      let(:new_attributes) { { item: 'bread', aisle: 8, side: 'Left' } }
+      let(:new_attributes) { { item_name: 'bread', aisle: 8, side: 'Left' } }
 
       it 'updates the requested product' do
         product = Product.create! valid_attributes

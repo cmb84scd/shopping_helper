@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.feature 'Update User', type: :feature do
   scenario 'User can edit their information and view it' do
     login_user
-    click_link 'Profile'
+    click_link 'Testuser'
 
     expect(page).to have_content 'User Profile'
 
-    click_link 'Edit'
+    click_button 'Edit'
 
     expect(page).to have_content 'Update Your Details'
 
@@ -26,11 +26,11 @@ RSpec.feature 'Update User', type: :feature do
 
   scenario 'User forgets to enter email when updating their details' do
     login_user
-    click_link 'Profile'
+    click_link 'Testuser'
 
     expect(page).to have_content 'User Profile'
 
-    click_link 'Edit'
+    click_button 'Edit'
 
     expect(page).to have_content 'Update Your Details'
 
