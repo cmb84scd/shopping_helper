@@ -7,7 +7,7 @@ RSpec.feature 'Update Product', type: :feature do
 
     expect(page).to have_content 'Product Details'
 
-    click_link 'Edit'
+    click_button 'Edit'
 
     expect(page).to have_content 'Update Product Information'
 
@@ -29,7 +29,7 @@ RSpec.feature 'Update Product', type: :feature do
 
     expect(page).to have_content 'Product Details'
 
-    click_link 'Edit'
+    click_button 'Edit'
 
     expect(page).to have_content 'Update Product Information'
 
