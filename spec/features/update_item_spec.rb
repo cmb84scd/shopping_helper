@@ -7,7 +7,7 @@ RSpec.feature 'Update Item', type: :feature do
 
     expect(page).to have_content 'Shopping List'
 
-    click_link 'Edit'
+    click_button 'Edit'
 
     expect(page).to have_content 'Item Details'
 
